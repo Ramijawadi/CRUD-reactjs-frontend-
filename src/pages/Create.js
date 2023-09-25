@@ -20,7 +20,7 @@ const Create = () => {
     }
   return (
     <div className='d-flex w-100 vh-100 justify-content-center align-items-center'>
-        <div className='w-50 border bg-secondary text-white p-5'>
+        <div  style={{backgroundColor:"#ac4eda"  , borderRadius:"20px"}} className='w-50 border text-white p-5'>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name:</label>
@@ -32,7 +32,7 @@ const Create = () => {
                     <input type="email" name='email' className='form-control'
                     onChange={e => setInputData({...inputData, email: e.target.value})}/>
                 </div><br />
-                <button className='btn btn-info'>Submit</button>
+                <button  style={{Color:"#ac4eda" ,backgroundColor:"#a399af"}}className='btn'>Create</button>
             </form>
         </div>
     </div>

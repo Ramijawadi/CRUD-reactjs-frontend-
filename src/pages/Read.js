@@ -22,7 +22,7 @@ useEffect(() => {
         <p>{Data.iData}</p>
         <p>{Data.name}</p>
         <p>{Data.email}</p>
-        <Link to="/">Back</Link>
+        <Link className='btn btn-sm btn-primary' to="/">Back</Link>
 
     </div>
        

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link , useNavigate } from "react-router-dom";
 
+import * as Icon from "react-bootstrap-icons"
+
 const Home = () => {
     const [data, setData] = useState([]);
 
@@ -26,8 +28,12 @@ const navigate = useNavigate()
         }, []);
         return (
             <div class="container mt-5">
-                <h1>Crud App with json Server</h1>
-                <Link to="/create" className="btn btn-success my-3">Create +</Link>
+                <h1 style={{color:"gray" ,fontFamily:"sans-serif" , display:"flex" , justifyContent:"center"}}>Crud App with json Server</h1>
+                <Link to="/create">
+               
+                <Icon.PersonAdd  size={50} color="#ac4eda" />
+
+                </Link>
                 <table class="table">
                     <thead>
                         <tr>
@@ -45,9 +51,20 @@ const navigate = useNavigate()
                                 <td>{data.email}</td>
                                 <td>
 
-                                    <Link className="text-decoration-none btn btn-sm btn-success" to={`/update/${data.id}`}>Update</Link>
-                                    <button className="btn btn-sm btn-danger" onClick={e => handleDelete(data.id)}>Delete</button>
-                                    <Link className="btn btn-sm btn-primary" to={`/read/${data.id}`}>Read</Link>
+                                    <Link to={`/update/${data.id}`}>
+
+                                    <Icon.PencilSquare  size={25} color="green" />
+                                    </Link>
+
+                          <Icon.Trash3  size={25} color="red" onClick={e => handleDelete(data.id)} /> 
+
+
+                                    {/* <button className="btn btn-sm btn-danger" onClick={e => handleDelete(data.id)}>Delete</button> */}
+                                    <Link  to={`/read/${data.id}`}>
+
+                                    <Icon.Eye  size={25} color="gray" />
+
+                                    </Link>
                                 </td>
                             </tr>
                         ))}
